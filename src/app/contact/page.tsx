@@ -76,8 +76,7 @@ export default function ContactPage() {
           </h1>
 
           <p className="mt-6 font-serif text-xl sm:text-2xl text-white max-w-3xl italic leading-snug">
-            No 3-week discovery delays. No junior account handlers whispering through telephone games. 
-            Specify your objective, timeline, and investment — our senior engineering & creative directors review your brief and respond within 24 hours.
+            No 3-week discovery delays. No junior account handlers whispering through telephone games. Specify your objective, timeline, and investment. Our senior engineering & creative directors review your brief and respond within 24 hours.
           </p>
         </div>
 
