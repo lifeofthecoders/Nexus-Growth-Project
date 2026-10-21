@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,25..151,100..1000,96,468,79,-203,738,514,712&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Anton&family=Mochiy+Pop+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@font-face {
+  font-family: 'Panchang';
+  src: url('https://framerusercontent.com/third-party-assets/fontshare/wf/47WQXPVBB5FZSBSKG7EM3GTGOVFM5BBT/ODED7M7ROA7KYKTD3MYSN4KKO6JVXBQE/EE3DYKUPHF3W5SWXFO53CRP5KMNTTNTH.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import "tailwindcss";
+
+@theme {
+  /* === NEXUS Growth Design System — Dark Palette === */
+  --color-canvas: #0A0A0A;
+  --color-paper: #121212;
+  --color-paper-dark: #1A1A1A;
+  --color-ink: #FFFFFF;
+  --color-ink-muted: #C9CCD1;
+  --color-ink-light: #6E7177;
+  
+  /* Signature Red (from NEXUS Growth logo arrow gradient) */
+  --color-accent: #FF1F1F;
+  --color-accent-dark: #8B0000;
+  
+  /* Silver/Steel Gray (from NEXUS Growth "N" letterform) */
+  --color-silver: #C9CCD1;
+  --color-silver-dark: #6E7177;
+  
+  --color-deep-surface: #080808;
+
+  --font-sans: var(--font-sans), "Inter", system-ui, sans-serif;
+  --font-serif: var(--font-serif), "Instrument Serif", Georgia, serif;
+  --font-mono: var(--font-mono), "JetBrains Mono", monospace;
+  --font-grotesk: var(--font-grotesk), "Space Grotesk", sans-serif;
+  --font-display: var(--font-display), "Syne", sans-serif;
+  --font-compressed: "Roboto Flex", "Arial Narrow", sans-serif;
+  --font-accent: var(--font-accent), "Playfair Display", Georgia, serif;
+}
+
+:root {
+  --nav-offset: 88px;
+  --color-canvas: #0A0A0A;
+  --color-ink: #FFFFFF;
+  --color-accent: #FF1F1F;
+  --color-accent-dark: #8B0000;
+  --color-silver: #C9CCD1;
+  --color-silver-dark: #6E7177;
+
+  /* 21st.dev & shadcn compatibility */
+  --color-foreground: #FFFFFF;
+  --color-background: #0A0A0A;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --foreground: #FFFFFF;
+  --background: #0A0A0A;
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+html {
+  scroll-behavior: auto;
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+
+/* Base selection — Signature Red */
+::selection {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+/* Global scroll margin for anchors */
+* {
+  scroll-margin-top: var(--nav-offset);
+}
+
+/* Ultra-Compressed Decathlon-Tier Headlines */
+.u-title-100 {
+  font-family: "Roboto Flex", "Arial Narrow", sans-serif;
+  font-variation-settings: "wdth" 33;
+  font-stretch: 33%;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: clamp(3.5rem, 13vw, 15rem);
+  line-height: 0.82;
+  letter-spacing: -0.02em;
+}
+
+.u-title-200 {
+  font-family: "Roboto Flex", "Arial Narrow", sans-serif;
+  font-variation-settings: "wdth" 33;
+  font-stretch: 33%;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: clamp(2.25rem, 6.5vw, 6.5rem);
+  line-height: 0.86;
+  letter-spacing: -0.015em;
+}
+
+.u-title-300 {
+  font-family: "Roboto Flex", "Arial Narrow", sans-serif;
+  font-variation-settings: "wdth" 33;
+  font-stretch: 33%;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: clamp(1.4rem, 3.2vw, 3.2rem);
+  line-height: 0.92;
+}
+
+.u-label {
+  font-family: "Roboto Flex", "Arial Narrow", sans-serif;
+  font-variation-settings: "wdth" 151;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+/* ============================
+   NEXUS Growth Button System 
+   ============================ */
+.c-button {
+  font-family: "Roboto Flex", "Arial Narrow", sans-serif;
+  font-variation-settings: "wdth" 33;
+  font-stretch: 33%;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  padding: 13px 26px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  background: linear-gradient(135deg, #FF1F1F, #8B0000);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(255, 31, 31, 0.15);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              letter-spacing 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.c-button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 30px rgba(255, 31, 31, 0.45);
+  letter-spacing: 0.08em;
+}
+
+.c-button-outline {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.c-button-outline:hover {
+  background: linear-gradient(135deg, #FF1F1F, #8B0000);
+  border-color: #FF1F1F;
+}
+
+.c-button-white {
+  background: #FFFFFF;
+  color: #0A0A0A;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.c-button-white:hover {
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+.c-button-dark {
+  background: #1A1A1A;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.c-button-dark:hover {
+  background: linear-gradient(135deg, #FF1F1F, #8B0000);
+  border-color: #FF1F1F;
+}
+
+/* ============================
+   NEXUS Growth Badge System 
+   ============================ */
+.sticker-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  font-family: var(--font-grotesk), monospace;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  box-shadow: 0 0 12px rgba(255, 31, 31, 0.1);
+  background-color: #1A1A1A;
+  color: #fff;
+}
+
+/* ============================
+   NEXUS Growth Card System 
+   ============================ */
+.tactile-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  box-shadow: 0 0 0 rgba(255, 31, 31, 0);
+  background-color: #121212;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease;
+}
+
+.tactile-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px rgba(255, 31, 31, 0.15);
+  border-color: rgba(255, 31, 31, 0.3);
+}
+
+/* Dark Canvas with subtle dot grid */
+.paper-canvas {
+  background-color: transparent;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ============================
+   NEXUS Growth Glow Utilities 
+   ============================ */
+.glow-red {
+  box-shadow: 0 0 24px rgba(255, 31, 31, 0.35);
+}
+
+.glow-red-soft {
+  box-shadow: 0 0 16px rgba(255, 31, 31, 0.2);
+}
+
+.gradient-red {
+  background: linear-gradient(135deg, #FF1F1F, #8B0000);
+}
+
+.gradient-red-text {
+  background: linear-gradient(135deg, #FF1F1F, #FF6B6B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-glow-red {
+  text-shadow: 0 0 20px rgba(255, 31, 31, 0.5);
+}
+
+/* Animated gradient border on hover */
+.border-glow-hover {
+  position: relative;
+}
+.border-glow-hover::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255, 31, 31, 0.5), transparent, rgba(255, 31, 31, 0.3));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.border-glow-hover:hover::before {
+  opacity: 1;
+}
+
+/* ============================
+   Lenis smooth scrolling 
+   ============================ */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Custom dark scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #FF1F1F, #8B0000);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF1F1F;
+}
