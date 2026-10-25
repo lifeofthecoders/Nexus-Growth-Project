@@ -269,7 +269,7 @@ export default function PrivacyPage() {
               This Privacy Policy may be updated from time to time to reflect
               changes in the website, services, operational practices, or
               applicable requirements. The updated version will be published
-              on this page with an updated effective date.
+              on this page with an updated effective date...
             </p>
           </div>
         </section>
