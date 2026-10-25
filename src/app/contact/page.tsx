@@ -174,7 +174,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-3 p-3 rounded-xl bg-[#0A0A0A] border-2 border-white/10">
-                  <div className="h-6 w-6 rounded bg-[#C9CCD1] border border-white/10 flex items-center justify-center font-black text-xs shrink-0 mt-0.5">
+                  <div className="h-6 w-6 rounded bg-[#FF1F1F] border border-white/10 flex items-center justify-center font-black text-xs shrink-0 mt-0.5">
                     3
                   </div>
                   <div>

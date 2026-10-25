@@ -1,15 +1,15 @@
 'use client';
 
 import React, { useState } from 'react';
-import { 
-  Check, 
-  Send, 
-  Sparkles, 
-  ArrowRight, 
-  CheckCircle2, 
-  Clock, 
-  ShieldCheck, 
-  Terminal, 
+import {
+  Check,
+  Send,
+  Sparkles,
+  ArrowRight,
+  CheckCircle2,
+  Clock,
+  ShieldCheck,
+  Terminal,
   AlertCircle,
   Copy,
   RefreshCw
@@ -298,16 +298,14 @@ export function ContactForm() {
                 key={item.id}
                 type="button"
                 onClick={() => toggleDiscipline(item.label)}
-                className={`text-xs font-mono font-bold px-3.5 py-2.5 rounded-xl border-2 border-white/10 transition-all flex items-center gap-2 text-left ${
-                  isSelected
-                    ? 'bg-[#0A0A0A] text-white shadow-[-3px_4px_0px_#FF1F1F] -translate-y-0.5'
-                    : 'bg-[#121212] text-white hover:bg-[#1A1A1A] shadow-[0_0_20px_rgba(255,31,31,0.15)]'
-                }`}
+                className={`text-xs font-mono font-bold px-3.5 py-2.5 rounded-xl border-2 border-white/10 transition-all flex items-center gap-2 text-left ${isSelected
+                  ? 'bg-[#0A0A0A] text-white shadow-[-3px_4px_0px_#FF1F1F] -translate-y-0.5'
+                  : 'bg-[#121212] text-white hover:bg-[#1A1A1A] shadow-[0_0_20px_rgba(255,31,31,0.15)]'
+                  }`}
               >
                 <span
-                  className={`h-3.5 w-3.5 rounded border border-white/10 flex items-center justify-center transition-colors ${
-                    isSelected ? 'bg-[#FF1F1F] text-white' : 'bg-[#121212]'
-                  }`}
+                  className={`h-3.5 w-3.5 rounded border border-white/10 flex items-center justify-center transition-colors ${isSelected ? 'bg-[#FF1F1F] text-white' : 'bg-[#121212]'
+                    }`}
                 >
                   {isSelected && <Check className="h-2.5 w-2.5 stroke-[3]" />}
                 </span>
@@ -337,11 +335,10 @@ export function ContactForm() {
                 key={tier.id}
                 type="button"
                 onClick={() => setBudget(tier.label)}
-                className={`p-4 rounded-xl border-2 border-white/10 text-left transition-all ${
-                  isSelected
-                    ? 'bg-[#FF1F1F] text-white shadow-[0_0_20px_rgba(255,31,31,0.15)] -translate-y-1'
-                    : 'bg-[#121212] text-white hover:bg-[#121212] shadow-[0_0_20px_rgba(255,31,31,0.15)]'
-                }`}
+                className={`p-4 rounded-xl border-2 border-white/10 text-left transition-all ${isSelected
+                  ? 'bg-[#FF1F1F] text-white shadow-[0_0_20px_rgba(255,31,31,0.15)] -translate-y-1'
+                  : 'bg-[#121212] text-white hover:bg-[#121212] shadow-[0_0_20px_rgba(255,31,31,0.15)]'
+                  }`}
               >
                 <div className="font-['Roboto_Flex'] text-xl font-black [font-variation-settings:'wdth'_33] [font-stretch:33%] uppercase">
                   {tier.label}
@@ -356,38 +353,86 @@ export function ContactForm() {
       </div>
 
       {/* SECTION 3: TIMELINE & URGENCY */}
-      <div className="space-y-4 border-t-2 border-white/10/10 pt-8">
-        <div className="flex items-center gap-2">
-          <span className="h-6 w-6 rounded-full border-2 border-white/10 bg-[#C9CCD1] text-white font-black text-xs flex items-center justify-center">
-            3
+      <div className="space-y-5 border-t-2 border-white/10 pt-8">
+        {/* SECTION HEADER */}
+        <div className="flex items-center justify-between gap-4 flex-wrap">
+          <div className="flex items-center gap-3">
+            <span className="h-7 w-7 shrink-0 rounded-full border-2 border-white/10 bg-[#FF1F1F] text-white font-black text-xs flex items-center justify-center shadow-[0_0_15px_rgba(255,31,31,0.18)]">
+              3
+            </span>
+
+            <div>
+              <h3 className="font-['Roboto_Flex'] text-xl font-bold uppercase [font-variation-settings:'wdth'_33] [font-stretch:33%] tracking-tight text-white">
+                Deployment Timeline
+              </h3>
+
+              <p className="mt-1 font-mono text-[10px] uppercase tracking-wider text-[#6E7177]">
+                Select your preferred project start window
+              </p>
+            </div>
+          </div>
+
+          <span className="font-mono text-[10px] uppercase tracking-wider text-[#C9CCD1]">
+            {timeline}
           </span>
-          <h3 className="font-['Roboto_Flex'] text-xl font-bold uppercase [font-variation-settings:'wdth'_33] [font-stretch:33%] tracking-tight">
-            Deployment Timeline
-          </h3>
         </div>
 
+        {/* TIMELINE OPTIONS */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {TIMELINE_OPTIONS.map((opt) => {
             const isSelected = timeline === opt.label;
+
             return (
               <button
                 key={opt.id}
                 type="button"
+                aria-pressed={isSelected}
                 onClick={() => setTimeline(opt.label)}
-                className={`p-3.5 rounded-xl border-2 border-white/10 text-left transition-all flex items-center justify-between ${
-                  isSelected
-                    ? 'bg-[#0A0A0A] text-white shadow-[-3px_4px_0px_#C9CCD1] -translate-y-0.5'
-                    : 'bg-[#121212] text-white hover:bg-[#121212] shadow-[0_0_20px_rgba(255,31,31,0.15)]'
-                }`}
-              >
-                <span className="font-mono text-xs font-bold">{opt.label}</span>
+                className={`group relative min-h-[122px] rounded-xl border-2 p-4 text-left transition-all duration-200 ease-out flex flex-col overflow-hidden ${isSelected
+                  ? "border-[#FF1F1F] bg-[#FF1F1F] text-white shadow-[0_0_24px_rgba(255,31,31,0.18)] -translate-y-1"
+                  : "border-white/10 bg-[#121212] text-white hover:border-[#FF1F1F]/60 hover:bg-[#171717] hover:-translate-y-0.5"}`}>
+                {/* Subtle active indicator */}
                 <span
-                  className={`text-[9px] font-mono uppercase px-2 py-0.5 rounded border border-white/10 ${
-                    isSelected ? 'bg-[#C9CCD1] text-white' : 'bg-[#121212] text-white'
-                  }`}
-                >
-                  {opt.badge}
-                </span>
+                  className={`absolute top-0 left-0 right-0 h-[3px] transition-all duration-200 ${isSelected ? "bg-white" : "bg-transparent group-hover:bg-[#FF1F1F]"}`}
+                />
+
+                {/* Title row: title (left) + check slot (right). The slot is always reserved,
+      so the title wraps the same way whether selected or not. */}
+                <div className="flex items-start justify-between gap-2 pt-1">
+                  <span className="min-w-0 flex-1 block font-['Roboto_Flex'] text-[15px] sm:text-base font-black uppercase leading-[1.1] tracking-tight text-white">
+                    {opt.label}
+                  </span>
+
+                  <span
+                    className={`shrink-0 -mt-0.5 h-6 w-6 rounded-full flex items-center justify-center ${isSelected
+                      ? "bg-white text-[#FF1F1F] shadow-sm"
+                      : "invisible"
+                      }`}
+                    aria-hidden="true"
+                  >
+                    {isSelected && <Check className="h-3.5 w-3.5 stroke-[3]" />}
+                  </span>
+                </div>
+
+                {/* Status Area: window text bottom-left, badge bottom-right.
+      Wraps instead of overlapping when the card is narrow. */}
+                <div className="mt-auto pt-6 flex flex-wrap items-end justify-between gap-x-2 gap-y-2">
+                  {/* Deployment Window */}
+                  <span
+                    className={`shrink-0 whitespace-nowrap font-mono text-[9px] uppercase leading-[1.25] tracking-wider ${isSelected ? "text-white/75" : "text-[#6E7177]"}`}>
+                    Deployment
+                    <br />
+                    window
+                  </span>
+
+                  {/* Status Badge */}
+                  <span
+                    className={`ml-auto shrink-0 inline-flex items-center justify-center min-h-[30px] rounded-md border px-2.5 py-1.5 font-mono text-[9px] font-bold uppercase leading-none tracking-wide whitespace-nowrap transition-colors ${isSelected
+                      ? "border-white/30 bg-white text-[#111111]"
+                      : "border-white/10 bg-[#1A1A1A] text-[#C9CCD1] group-hover:border-[#FF1F1F]/40 group-hover:text-white"}`}>
+                    {opt.badge}
+                  </span>
+                </div>
               </button>
             );
           })}
