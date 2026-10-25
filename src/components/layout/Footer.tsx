@@ -164,9 +164,9 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-6 border-t border-white/10 font-mono text-xs text-[#6E7177]">
           <p>© {new Date().getFullYear()} NEXUS Growth Creative Production Agency. Engineered for performance.</p>
           <div className="flex gap-6">
-            <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
-            <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
-            <Link href="/services/web-development" className="text-[#FF1F1F] hover:underline">Website Spec</Link>
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
+            <Link href="/services/web-development" className="text-[#FF1F1F] hover:underline">Website Specification</Link>
           </div>
         </div>
       </div>
